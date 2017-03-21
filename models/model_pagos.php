@@ -57,7 +57,15 @@ $query = $this->DB->query("SELECT * FROM pagos where id_pago=".$_id);
    mysqli_query($this->DB,$sql) or die ('error \n'.mysqli_error($this->$DB));
    }
 
+function getTotalIncome($initialDate,$lastDay){
+$query = $this->DB->query("SELECT sum(monto) monto FROM pagos where estado='Pagado' and fecha_pago between '".$initialDate."' and '".$lastDay."'");
+   while ($fila = $query->fetch_assoc()) {
+      # code...
+      $this->pagos= $fila;
+   }
+   return $this->pagos;
 
+}
 
 
 

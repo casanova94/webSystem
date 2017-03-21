@@ -19,8 +19,12 @@ function __construct(){
 
 
 function index(){
+	$initialDate = date('Y-m-01');
+	$lastDay = date('t');
+	$lastDay = date("Y-m-$lastDay");
 	$title = "Socios";
 	$query = $this->model_pagos->getPagos();
+	$income = $this->model_pagos->getTotalIncome($initialDate,$lastDay);
 	require_once 'views/header.php';
 	require_once 'views/pagos/index.php';
 	require_once 'views/footer.php';

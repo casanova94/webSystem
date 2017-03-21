@@ -2,9 +2,18 @@
 	
 		<div class="row">
 	<div class="jumbotron">
+
 		<h2>Administración de pagos</h2>
   <p><a class="btn btn-primary btn-lg" href="index.php?c=pagos&a=pago" role="button">Agregar pago</a></p>
+
 	</div>
+	<div class="container">
+	<div class="row" style="margin-bottom:40px;">
+		<h2 class="text-center"><span class="label label-default">Ingreso mensual: $<?php echo isset($income['monto'])?$income['monto']:'0'; ?></span><h2>
+		
+	</div>
+    </div>
+	
 	<div class="table-responsive">
 		<table class="table table-striped table-hover ">
 			<thead>
